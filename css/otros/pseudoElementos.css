@@ -1,0 +1,42 @@
+p::first-letter {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+p::first-line {
+    background: #cf5c36;
+    line-height: 40px;
+}
+
+*::selection {
+    background: #f9a03f;
+    color: #fff;
+}
+
+*::-moz-selection {
+    background: #f9a03f;
+    color: #fff;
+}
+
+.caja {
+    background: #f9a03f;
+    height: 150px;
+    width: 150px
+}
+
+.caja::before {
+    background: #3a3a3a;
+    color: #fff;
+    content: 'Contenido antes de la caja';
+    display: block;
+}
+
+.caja::after {
+    background: #000;
+    content: '';
+    height: 50px;
+    display: block;
+    left: 200px;
+    position: relative;
+    width: 50px;
+}

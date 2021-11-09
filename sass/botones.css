@@ -1,0 +1,20 @@
+body {
+  background: #f2f2f2;
+  font-family: arial, sans-serif; }
+
+.boton, .btn-rojo, .btn-azul, .btn-verde {
+  background: none;
+  color: #fff;
+  display: inline-block;
+  margin-right: 20px;
+  padding: 15px 20px;
+  text-decoration: none; }
+
+.btn-rojo {
+  background: #ff2732; }
+
+.btn-azul {
+  background: #246eb9; }
+
+.btn-verde {
+  background: #4fb560; }

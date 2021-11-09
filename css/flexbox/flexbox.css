@@ -1,0 +1,103 @@
+/*
+Flexbox es un conjunto de propiedades que nos permiten distribuir nuestros elementos de una forma flexible para mejores layouts
+
+Para utilizar flexbox necesitamos un contenedor padre que tenga elementos hijos. Ya que estos son los que se haran flexibles
+
+Flexbox se divide en 2 grupos de propiedades :
+      - Propiedades para los elementos padre
+      - Propiedades para los elementos hijo
+
+=================================
+Propiedades del contenedor padre:
+=================================
+
+- display:flex;
+  Nos permite habilitar que los elementos hijos sean flexibles
+
+- flex-direction:;
+  row | row-reverse | column | column-reverse
+
+- flex-wrap:;
+  no-wrap | wrap | wrap-reverse
+
+- flex-flow: <flex-direction> ||  <flex-wrap>;
+  Es un atajo de flex-direction y flex-wrap.
+
+- justify-content:;
+  flex-start | flex-end | center | space-between | space-around
+
+- align-items:;
+  flex-start | flex-end | center | stretch | baseline
+
+- align-content:;
+  IMPORTANTE: Esta propiedad solo funciona cuando hay más de una línea de elementos
+
+  flex-start | flex-end | center | stretch | space-between | space-around
+
+  =================================
+  Propiedades de los elementos hijo:
+  =================================
+
+- order:;
+
+- flex-grow:;
+  Acepta un numero que servira de proporcion para hacer crecer el elemento en relacion a los otros
+
+  Si todos los elementos tienen flex-grow 1 el espacio restante se distribuira entre los elemntos
+
+- flex-shrink:;
+  Define la habilidad de un elemento para hacerce más pequeño
+
+  Por defecto todos se pueden hacer mas pequeños pero si le ponemos flex-shrink 0 el elemnto no podra ser mas pequeño que su ancho
+
+- flex-basis:;
+  Nos permite especificar el valor inicial que tendra un elemento
+
+
+
+
+ */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+  font-family: Arial;
+}
+
+.contenedor {
+  /* align-items: center; */
+  /* align-content: flex-start; */
+  background: #212d40;
+  display: flex;
+  height: 500px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* flex-flow: row wrap; */
+  justify-content: space-between;
+  max-width: 700px;
+  width: 80%;
+}
+
+.caja {
+  background: #f79256;
+  color: #fff;
+  font-size: 40px;
+  flex: 1 1 auto; /* flex-grow | flex-shrink | flex-basis */
+  height: 100px;
+  margin: 20px;
+  /* order: 1; */
+  padding: 20px;
+  text-align: center;
+  width: 100px;
+}
+
+.dos {
+  align-self: stretch;
+  height: auto;
+}

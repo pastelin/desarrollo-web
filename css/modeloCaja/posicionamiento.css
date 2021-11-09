@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+.caja {
+  background: #0e6ba8;
+  /* float: left; */
+  height: 200px;
+  margin: 20px;
+  width: 200px;
+}
+
+.cajaPadre {
+  background: #2e294e;
+  height: 500px;
+  margin: 20px;
+  position: relative;
+  width: 500px;
+}
+
+.posicionada {
+  background: #6695e8;
+  /*bottom: 50px;*/
+  /* left: 220px; */
+  /* position: absolute; */
+  /* right:;
+  top:; */
+
+}
+
+
+/* Tipos de Posicionamiento
+
+    - Normal (static): Posicionamiento por defecto con el que los navagadores acomodan los elementos
+    - Relativo (relative): Nos permite posicionar una caja y despues moverla desde su lugar original
+    - Absoluto (absolute): Nos permite posicionar una caja respecto a su contenedor y el resto de elementos ignoran la nueva posicion
+    - Fijo (fixed): Nos permite posicionar una caja en donde su posicion respecto a la pantalla del usuario siempre va a ser la misma
+    - Flotante (float): Nos permite desplazar las cajas todo lo posible hacia la derecha o izquierda
+
+ */

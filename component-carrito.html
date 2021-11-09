@@ -1,0 +1,199 @@
+<!doctype HTML>
+
+<html>
+  <head>
+    <base href="https://cdn.rawgit.com/download/polymer-cdn/2.6.0/lib/">
+    <script src="webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="iron-ajax/iron-ajax.html">
+    <link rel="import" href="polymer/polymer-element.html">
+    <title>Componente carrito</title>
+  </head>
+
+  <body>
+    <component-father></component-father>
+    <dom-module id="component-father">
+      <template>
+	<style></style>
+	<h2>Polymer Store</h2>
+	<component-cart total="{{total}}" obj-ap="{{objAp}}" subtotal-ap="{{subtotalAp}}" obj-or="{{objOr}}" subtotal-or="{{subtotalOr}}" obj-ra="{{objRa}}" subtotal-ra="{{subtotalRa}}"></component-cart>
+	<component-products total="{{total}}" obj-ap="{{objAp}}" subtotal-ap="{{subtotalAp}}" obj-or="{{objOr}}" subtotal-or="{{subtotalOr}}" obj-ra="{{objRa}}" subtotal-ra="{{subtotalRa}}"></component-products>
+      </template>
+      <script>
+	class ComponentFather extends Polymer.Element{
+	  static get is(){ return "component-father" }
+	  static get properties(){
+	  	return{
+	  	  total: { type: Number},
+	  	  objAp: { type: Object },
+	      subtotalAp: { type: Number},
+	      objOr: { type: Object },
+	      subtotalOr: { type: Number},
+	      objRa: { type: Object },
+	      subtotalRa: { type: Number}
+	 	}
+	  }
+	}
+	customElements.define(ComponentFather.is, ComponentFather);
+      </script>
+    </dom-module>
+
+
+    <dom-module id="component-cart">
+      <template>
+	<style></style>
+	<h3>Cart</h3>
+	<div>
+	  <div><span>Product</span> <span>Price</span> <span>Units</span> <span>Subtotal</span> </div>
+	  <div><span>[[objAp.name]]</span> <span>[[objAp.price]]</span> <span>{{objAp.units}}</span> <span>[[subtotalAp]]</span> </div>
+	  <div><span>[[objOr.name]]</span> <span>[[objOr.price]]</span> <span>{{objOr.units}}</span> <span>[[subtotalOr]]</span> </div>
+	  <div><span>[[objRa.name]]</span> <span>[[objRa.price]]</span> <span>{{objRa.units}}</span> <span>[[subtotalRa]]</span> </div>
+	  <div><span>Total</span> <span>[[total]]</span></div>
+	</div>
+      </template>
+      <script>
+	class ComponentCart extends Polymer.Element{
+	  static get is() { return "component-cart" }
+	  static get properties(){
+	    return {
+	      objAp: { type: Object, value: {name: 'Pineaples', price: 10.5, units: 0}, notify: true },
+	      subtotalAp: { type: Number, value: 0, notify: true },
+	      objOr: { type: Object, value: {name: 'Oranges', price: 20.5, units: 0}, notify: true },
+	      subtotalOr: { type: Number, value: 0, notify: true },
+	      objRa: { type: Object, value: {name: 'Raspberries', price: 21.5, units: 0}, notify: true },
+	      subtotalRa: { type: Number, value: 0, notify: true },
+	      total: { type: Number, value: 0, notify: true}
+	    }
+	  }
+	}
+	customElements.define(ComponentCart.is, ComponentCart);
+
+      </script>
+    </dom-module>
+
+
+    <dom-module id="component-products">
+      <template>
+	<style></style>
+	<h3>Products</h3>
+	<div>
+	  <div>
+	    <h5>Pineaples</h5>
+	    <p>Price: 10.5</p>
+	    <p>Units: [[indexAp]]</p>
+	    <button on-click="moreAp"> + </button> <button on-click="lessAp"> - </button>
+	  </div>
+	  <div>
+	  	<h5>Oranges</h5>
+	    <p>Price: 20.5</p>
+	    <p>Units: [[indexOr]]</p>
+	    <button on-click="moreOr"> + </button> <button on-click="lessOr"> - </button>
+	  </div>
+	  <div>
+	  	<h5>Raspberries</h5>
+	    <p>Price: 21.5</p>
+	    <p>Units: [[indexRa]]</p>
+	    <button on-click="moreRa"> + </button> <button on-click="lessRa"> - </button>
+	  </div>
+	</div>
+      </template>
+      <script>
+	class ComponentProducts extends Polymer.Element{
+	  static get is() { return "component-products" }
+	  static get observers(){
+	    return [
+	      'cambiarTotal(subtotalAp, subtotalOr, subtotalRa)'
+	    ]
+	  }
+	  static get properties(){
+	    return {
+	      total: { type: Number, notify: true},
+	      objAp: { type: Object, notify: true},
+	      indexAp: { type: Number, value: 10},
+	      subtotalAp: { type: Number,  notify: true},
+	      objOr: { type: Object, notify: true},
+	      indexOr: { type: Number, value: 19},
+	      subtotalOr: { type: Number,  notify: true},
+	      objRa: { type: Object, notify: true},
+	      indexRa: { type: Number, value: 30},
+	      subtotalRa: { type: Number,  notify: true}
+	    }
+	  }
+	  // observer para cambiar los valores de total
+	  cambiarTotal(a, b, c){
+	  	let suma = a+b+c;
+	  	this.set('total', suma);
+	  }
+	  // Métodos para los botones dePineaples
+	  moreAp(e){
+	  	if(this.indexAp > 0){
+ 	  	  this.indexAp = this.indexAp - 1;
+ 	  	  let unit = this.objAp.units + 1;
+ 	  	  this.set('objAp.units', unit);
+ 	  	  let acum = this.subtotalAp + this.objAp.price;
+ 	  	  this.set('subtotalAp', acum);
+ 	  	  console.log(this.total)
+	  	}
+	  }
+	  lessAp(e){
+	  	if(this.indexAp <10){
+	  	  this.indexAp = this.indexAp + 1;
+	  	  let unit = this.objAp.units - 1;
+	  	  this.set('objAp.units', unit);
+	  	  let acum = this.subtotalAp - this.objAp.price;
+	  	  this.set('subtotalAp', acum);
+	  	 }
+	  }
+	  // Métodos para los botones de Oranges
+	  moreOr(e){
+	  	if(this.indexOr > 0){
+ 	  	  this.indexOr = this.indexOr - 1;
+ 	  	  let unit = this.objOr.units + 1;
+ 	  	  this.set('objOr.units', unit);
+ 	  	  let acum = this.subtotalOr + this.objOr.price;
+ 	  	  this.set('subtotalOr', acum);
+ 	  	  console.log()
+	  	}
+	  }
+	  	lessOr(e){
+	  	  if(this.indexOr <19){
+	  	  	this.indexOr = this.indexOr + 1;
+	  	  	let unit = this.objOr.units - 1;
+	  	  	this.set('objOr.units', unit);
+	  	  	let acum = this.subtotalOr - this.objOr.price;
+	  	  	this.set('subtotalOr', acum);
+	  	  }
+	  	}
+	  	// Métodos para los botones de Raspberries
+	  	moreRa(e){
+	  	if(this.indexRa > 0){
+ 	  	  this.indexRa = this.indexRa - 1;
+ 	  	  let unit = this.objRa.units + 1;
+ 	  	  this.set('objRa.units', unit);
+ 	  	  let acum = this.subtotalRa + this.objRa.price;
+ 	  	  this.set('subtotalRa', acum);
+ 	  	  console.log()
+	  	}
+	  }
+	  	lessRa(e){
+	  	  if(this.indexRa <30){
+	  	  	this.indexRa = this.indexRa + 1;
+	  	  	let unit = this.objRa.units - 1;
+	  	  	this.set('objRa.units', unit);
+	  	  	let acum = this.subtotalRa - this.objRa.price;
+	  	  	this.set('subtotalRa', acum);
+	  	  }
+	  	}
+
+
+
+
+	}
+	customElements.define(ComponentProducts.is, ComponentProducts);
+      </script>
+    </dom-module>
+
+
+  </body>
+
+
+</html>

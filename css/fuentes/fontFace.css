@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Glory-Regular";
+  src:url('fonts/static/Glory-Regular.ttf');
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+  font-weight: normal;
+}

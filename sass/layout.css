@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #f2f2f2;
+  font-family: arial, sans-serif; }
+
+.contenedor {
+  margin: 20px;
+  width: 700px; }
+
+header,
+.main,
+aside,
+footer {
+  padding: 20px; }
+
+header {
+  background: #0d2c44;
+  color: #fff; }
+
+.main {
+  background: #fff;
+  float: left;
+  width: 70%; }
+
+aside {
+  background: #bb1f35;
+  color: #fff;
+  float: left;
+  width: 30%; }
+
+footer {
+  background: #0d2c44;
+  clear: both;
+  color: #fff;
+  width: 100%; }

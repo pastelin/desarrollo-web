@@ -1,0 +1,23 @@
+* {}
+/**
+h1 {
+  color: blue;
+}
+
+div p {
+  font-size: 20px;
+  color: black;
+}
+
+p a {
+  color:red;
+}
+
+.grande {
+  font-size: 28px;
+}
+*/
+
+div > p {
+  font-size: 20px;
+}

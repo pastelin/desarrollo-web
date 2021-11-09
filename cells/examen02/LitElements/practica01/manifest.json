@@ -1,0 +1,6 @@
+{
+  "name": "login",
+  "short_name": "login",
+  "start_url": "/",
+  "display": "standalone"
+}
