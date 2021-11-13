@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregando elementos al DOM con jquery</title>
+  <style>
+    .contenedor {
+      background: #212d40;
+      padding: 20px;
+      width: 600px;
+      height: 500px;
+    }
+
+    .caja {
+      width: 150px;
+      height: 150px;
+      background: #f79256;
+      margin: 10px;
+      display: inline-block;
+      color: #fff;
+      text-align: center;
+      font-size: 40px;
+      font-family: Arial;
+    }
+  </style>
+</head>
+<body>
+  <button id="agregar">Agregar caja</button>
+
+  <div class="contenedor" id="contenedor">
+  </div>
+
+  <script src="jquery.min.js"></script>
+  <script src="agregandoElementos.js"></script>
+</body>
+</html>

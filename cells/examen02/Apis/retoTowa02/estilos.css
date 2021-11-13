@@ -6,7 +6,7 @@
 
 .contenedor {
   display: grid;
-  background: #f8f8f8;
+  background: #343E46;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   width: 90%;
@@ -22,7 +22,7 @@
 }
 
 .contenedor-nombre {
-  background: rgba(0, 0, 0, .4);
+  background: #535e66;
   padding: 20px 10px;
   cursor: pointer;
   border-radius: 3px;
@@ -35,30 +35,60 @@
 
 /* Estilos para el contenedor derecho */
 .contenedor-izquierdo {
-  background: rgba(0, 0, 0, .2);
   width: 700px;
   border-radius: 3px;
 }
 
 .contenedor-opciones {
-  display: flex;
-  justify-: space-between;
-  background: rgba(0, 0, 0, .3);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
 }
 
 .contenedor-opcion {
   padding: 20px 10px;
-  height: 60px;
   width: 100%;
   cursor: pointer;
-  border-right: 1px solid #fff;
+  background: #535e66;
 }
 
 .contenedor-opcion:hover {
   background: cornflowerblue;
 }
 
-p {
+.contenedor-datos {
+  height: 100%;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.formato-datos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formato-datos p {
+  color: #f8f8f8;
+  font-size: 18px;
+  padding: 3px 70px;
+}
+
+.subtitulos {
+  font-weight: 900;
+}
+
+h1 {
+  padding: 40px 0 30px 25px;
+  color: #f8f8f8;
+}
+
+.contenedor-error {
+  text-align: center;
+}
+
+.texto {
   font-size: 18px;
   font-weight: 900;
   text-align: center;
