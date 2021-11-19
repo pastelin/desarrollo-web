@@ -29,7 +29,7 @@
 }
 
 .contenedor-nombre:hover {
-  background: #E86B19;
+  background: rgba(232,107,25,.8);
 }
 
 
@@ -53,7 +53,7 @@
 }
 
 .contenedor-opcion:hover {
-  background: #E86B19;
+  background: rgba(232,107,25,.8);
 }
 
 .activo {

@@ -1,0 +1,18 @@
+## folders
+**/bin/
+
+## folders
+**/node_modules
+**/bower_components
+**/.vs
+**/.vscode
+
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
