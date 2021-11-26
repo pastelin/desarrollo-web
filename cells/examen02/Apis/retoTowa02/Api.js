@@ -1,35 +1,35 @@
 export class Api {
-  constructor(endpoint) {
-    this.endpoint = endpoint;
-  }
+	constructor(endpoint) {
+		this.endpoint = endpoint;
+	}
 
-  async getResponse() {
-    const response = await fetch(this.endpoint);
-    return response;
-  }
+	async getResponse() {
+		const response = await fetch(this.endpoint);
+		return response;
+	}
 
-  async validarRespuesta() {
-    let bandera = false;
+	async validarRespuesta() {
+		let bandera = false;
 
-    try {
-      const respuesta = await this.getResponse();
+		try {
+			const respuesta = await this.getResponse();
 
-      if (respuesta.status === 200) {
-        bandera = true;
-      } else if (respuesta.status === 404) {
-        console.log("No se encontro ninguna coincidencia");
-      } else {
-        console.log("No pudo identificar el error");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+			if (respuesta.status === 200) {
+				bandera = true;
+			} else if (respuesta.status === 404) {
+				console.log('No se encontro ninguna coincidencia');
+			} else {
+				console.log('No pudo identificar el error');
+			}
+		} catch (error) {
+			console.log(error);
+		}
 
-    return bandera;
-  }
+		return bandera;
+	}
 
-  async obtenerResultados() {
-    const datos = await this.getResponse();
-    return await datos.json();
-  }
+	async obtenerResultados() {
+		const datos = await this.getResponse();
+		return await datos.json();
+	}
 }

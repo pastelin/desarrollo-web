@@ -10,7 +10,8 @@ class HolaMundo extends LitElement {
 
   render() {
     return html`
-      <p>Hola <b>${this.quien}</b></p>
+     <input type="file" value="Selecciona foto">
+      <!-- <p>Hola <b>${this.quien}</b></p> -->
     `;
   }
 }

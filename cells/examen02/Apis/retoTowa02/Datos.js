@@ -1,12 +1,12 @@
 export class Datos {
-  constructor() {
-    this.contenedorContenido = document.querySelector("#contenido");
-  }
+	constructor() {
+		this.contenedorContenido = document.querySelector('#contenido');
+	}
 
-  showPersonalData = (datos) => {
-    let contenido = "";
+	showPersonalData = (datos) => {
+		let contenido = '';
 
-    contenido = `
+		contenido = `
       <h1>${datos.name}</h1>
       <div class="formato-datos">
         <div class="subtitulos">
@@ -31,13 +31,13 @@ export class Datos {
         </div>
       </div>
     `;
-    this.contenedorContenido.innerHTML = contenido;
-  };
+		this.contenedorContenido.innerHTML = contenido;
+	};
 
-  showHomeworldData(datos) {
-    let contenido = "";
-    if (datos != null && datos != "" && datos != undefined) {
-      contenido = `
+	showHomeworldData(datos) {
+		let contenido = '';
+		if (datos != null && datos != '' && datos != undefined) {
+			contenido = `
         <h1>${datos.name}</h1>
         <div class="formato-datos">
           <div class="subtitulos">
@@ -64,20 +64,20 @@ export class Datos {
           </div>
         </div>
         `;
-    } else {
-      contenido = `
+		} else {
+			contenido = `
         <h1>No hay resultados</h1>
       `;
-    }
+		}
 
-    this.contenedorContenido.innerHTML = contenido;
-  }
+		this.contenedorContenido.innerHTML = contenido;
+	}
 
-  showSpeciesData(datos) {
-    let contenido = "";
+	showSpeciesData(datos) {
+		let contenido = '';
 
-    if (datos != null && datos != "" && datos != undefined) {
-      contenido = `
+		if (datos != null && datos != '' && datos != undefined) {
+			contenido = `
         <h1>${datos.name}</h1>
         <div class="formato-datos">
           <div class="subtitulos">
@@ -104,19 +104,19 @@ export class Datos {
           </div>
         </div>
         `;
-    } else {
-      contenido = `
+		} else {
+			contenido = `
         <h1>No hay resultados</h1>
       `;
-    }
-    this.contenedorContenido.innerHTML = contenido;
-  }
+		}
+		this.contenedorContenido.innerHTML = contenido;
+	}
 
-  showVehiclesData(datos) {
-    let contenido = "";
+	showVehiclesData(datos) {
+		let contenido = '';
 
-    if (datos != null && datos != "" && datos != undefined) {
-      contenido = `
+		if (datos != null && datos != '' && datos != undefined) {
+			contenido = `
         <h1>${datos.name}</h1>
         <div class="formato-datos">
           <div class="subtitulos">
@@ -147,19 +147,19 @@ export class Datos {
           </div>
         </div>
         `;
-    } else {
-      contenido = `
+		} else {
+			contenido = `
         <h1>No hay resultados</h1>
       `;
-    }
-    this.contenedorContenido.innerHTML = contenido;
-  }
+		}
+		this.contenedorContenido.innerHTML = contenido;
+	}
 
-  showStarshipsData(datos) {
-    let contenido = "";
+	showStarshipsData(datos) {
+		let contenido = '';
 
-    if (datos != null && datos != "" && datos != undefined) {
-      contenido = `
+		if (datos != null && datos != '' && datos != undefined) {
+			contenido = `
         <h1>${datos.name}</h1>
         <div class="formato-datos">
           <div class="subtitulos">
@@ -194,11 +194,11 @@ export class Datos {
           </div>
         </div>
         `;
-    } else {
-      contenido = `
+		} else {
+			contenido = `
         <h1>No hay resultados</h1>
       `;
-    }
-    this.contenedorContenido.innerHTML = contenido;
-  }
+		}
+		this.contenedorContenido.innerHTML = contenido;
+	}
 }

@@ -16,12 +16,14 @@ class FirstComponent extends LitElement {
       <h1>${this.prop1}</h1>
       <slot name="padre"></slot>
       <div>contador: ${this.prop4}</div>
-      <second-component prop2="Second Component"
+      <second-component id="hijo" prop2="Second Component"
       @someone-push-me="${this.someonePush}"></second-component>
     `;
   }
 
   someonePush(event) {
+    let usandoRenderRoot = this.renderRoot.querySelector('second-component');
+    console.log(usandoRenderRoot);
     this.prop4 = (event.detail.el.prop3);
   }
 
