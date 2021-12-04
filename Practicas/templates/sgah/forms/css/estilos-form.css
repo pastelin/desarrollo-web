@@ -1,0 +1,67 @@
+* {
+	box-sizing: border-box;
+}
+
+.contenedor {
+	width: 600px;
+	max-width: 90%;
+	background: #ebf7fa;
+	margin: 0 auto;
+	font-family: 'Work Sans';
+	padding: 20px;
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 17px;
+}
+
+.contenedor h1 {
+	font-size: 40px;
+	font-weight: 600;
+	margin: 0;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.formulario__grupo,
+.formulario__grupo-descripcion,
+.formulario__grupo-btn-enviar {
+	margin-bottom: 20px;
+}
+
+label.formulario__label {
+	font-weight: 600;
+	font-size: 20px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.formulario__select,
+.formulario__input {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	color: rgba(0, 0, 0, 0.7);
+	border-radius: 5px;
+	text-align: center;
+	border: 3px solid transparent;
+}
+
+.formulario__textarea {
+	min-width: 100%;
+	max-width: 100%;
+	height: 150px;
+	border-radius: 5px;
+	text-align: center;
+	border: 3px solid transparent;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.formulario select:focus,
+.formulario input[type='number']:focus,
+.formulario textarea:focus {
+	border: 3px solid #0099e5;
+	outline: none;
+}
