@@ -1,16 +1,20 @@
 * {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 }
 
+p,
+h3,
+h1 {
+	margin: 0;
+}
+
 body {
-	font-family: 'Work Sans';
 	font-size: 20px;
 	background: #f9f9f9;
 }
 
 .contenedor {
+	font-family: 'Work Sans';
 	width: 90%;
 	max-width: 1000px;
 	margin: 0 auto;
@@ -29,7 +33,7 @@ body {
 /*------------ Estilos para el elemento HEADER ----------------*/
 
 header .contenedor-interno {
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	margin-top: 40px;
 }
 
@@ -48,13 +52,12 @@ header .menu {
 header .menu a {
 	text-decoration: none;
 	display: inline;
-	height: 50px;
-	line-height: 50px;
+	height: 40px;
+	line-height: 40px;
 	background: rgba(0, 0, 0, 0.5);
 	padding: 0 20px;
 	text-align: center;
 	color: #fff;
-	/* font-size: 20px; */
 	font-weight: 600;
 	border-radius: 5px;
 }
@@ -74,16 +77,16 @@ header h1 {
 
 .main .contenedor-categoria-fecha .fecha,
 .main .contenedor-categoria-fecha .categoria {
-	height: 50px;
+	height: 40px;
 	padding: 0 20px;
 	background: #e8eff1;
-	line-height: 50px;
+	line-height: 40px;
 	border-radius: 5px;
 }
 .main .contenedor-categoria-fecha .fecha p,
 .main .contenedor-categoria-fecha .categoria {
 	text-align: center;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 400;
 	font-family: 'Work Sans';
 }
@@ -121,7 +124,7 @@ header h1 {
 	justify-content: space-between;
 	margin: 0 40px;
 }
-.main .btn-opciones nav a {
+.main .btn-opciones nav button {
 	display: inline-block;
 	height: 50px;
 	line-height: 50px;
@@ -132,9 +135,10 @@ header h1 {
 	border-radius: 5px;
 	text-decoration: none;
 	font-weight: 600;
+	border: none;
 }
 
-.main .btn-opciones nav a i {
+.main .btn-opciones nav button i {
 	padding: 0 20px;
 	line-height: 50px;
 }

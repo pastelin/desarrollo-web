@@ -13,8 +13,11 @@
 		<link rel="stylesheet" href="css/estilos-form.css" />
 	</head>
 	<body>
-		<section>
-			<div class="contenedor">
+		<section class="overlay" id="overlay-ahorro">
+			<div class="contenedor__formulario popup" id="popup-ahorro">
+				<a href="#" class="btn-cerrar-popup" id="btn-cerrar-popup-ahorro">
+					<i class="fas fa-times"></i>
+				</a>
 				<h1>Agregar Ahorro</h1>
 				<form action="" class="formulario">
 					<!-- Grupo asignacion -->
@@ -30,13 +33,14 @@
 					<div class="formulario__grupo">
 						<label class="formulario__label" for="monto">Monto</label>
 						<input
-							class="formulario__input"
 							type="number"
+							class="formulario__input"
 							name="monto"
 							id="monto"
 							placeholder="0.0"
 							min="0"
 							step="0.01"
+							autocomplete="off"
 						/>
 					</div>
 
@@ -57,5 +61,7 @@
 				</form>
 			</div>
 		</section>
+
+		<script src="https://kit.fontawesome.com/f346ed96e5.js" crossorigin="anonymous"></script>
 	</body>
 </html>

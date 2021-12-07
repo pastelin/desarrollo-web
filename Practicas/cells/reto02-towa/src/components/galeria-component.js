@@ -1,8 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { Galeria } from '../classes/galeria';
 import Fontawesome from 'lit-fontawesome';
-import './galeria-component';
-// import '../css/estilos.css';
 
 class GaleriaComponent extends LitElement {
 	static get properties() {
